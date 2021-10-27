@@ -1,11 +1,10 @@
 package hu.petrik;
 
 public class Szamla extends BankiSzolgaltatas{
-    private int aktualisEgyenleg;
+    protected int aktualisEgyenleg;
 
-    public Szamla(Tulajdonos tulajdonos, int aktualisEgyenleg) {
+    public Szamla(Tulajdonos tulajdonos) {
         super(tulajdonos);
-        this.aktualisEgyenleg = aktualisEgyenleg;
     }
 
     public int getAktualisEgyenleg() {
@@ -13,10 +12,10 @@ public class Szamla extends BankiSzolgaltatas{
     }
 
     public void Befizet(int osszeg){
-        aktualisEgyenleg+=osszeg;
+        this.aktualisEgyenleg+=osszeg;
     }
 
-    public final boolean Kivesz(int osszeg){
+    public boolean Kivesz(int osszeg){
         aktualisEgyenleg-=osszeg;
         return true;
     }
