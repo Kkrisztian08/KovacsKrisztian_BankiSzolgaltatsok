@@ -2,7 +2,7 @@ package hu.petrik;
 
 public class MegtakaritasiSzamla extends Szamla {
     private double kamat;
-    private static double alapKamat;
+    public static double alapKamat;
 
     public MegtakaritasiSzamla(Tulajdonos tulajdonos) {
         super(tulajdonos);
@@ -22,11 +22,13 @@ public class MegtakaritasiSzamla extends Szamla {
 
     @Override
     public boolean Kivesz(int osszeg) {
+        boolean sikeres=true;
+
         if (super.aktualisEgyenleg-osszeg>0) {
             super.aktualisEgyenleg-=osszeg;
-            return true;
+            return sikeres;
         }else{
-            return false;
+            return !sikeres;
         }
     }
 }
