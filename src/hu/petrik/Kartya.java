@@ -15,6 +15,12 @@ public class Kartya extends BankiSzolgaltatas {
     }
 
     public boolean Vasarlas(int osszeg){
-        return szamla.Kivesz(osszeg);
+        boolean sikeresVasarlas=true;
+        if (szamla.getAktualisEgyenleg()-osszeg>0) {
+            szamla.aktualisEgyenleg-=osszeg;
+            return sikeresVasarlas;
+        }else {
+            return !sikeresVasarlas;
+        }
     }
 }

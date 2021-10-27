@@ -16,7 +16,8 @@ public class MegtakaritasiSzamla extends Szamla {
         this.kamat = kamat;
     }
 
-    public void Kamatjóváírás(){
+    //valószinű nem jó
+    public void Kamatjovairas(){
         super.aktualisEgyenleg = (int) (super.aktualisEgyenleg * (100 + this.kamat) / 100);
     }
 

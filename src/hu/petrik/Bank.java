@@ -6,6 +6,12 @@ import java.util.List;
 public class Bank {
     private List<Szamla> szamlaLista = new ArrayList<>();
 
+    //nem biztos hogy jó
+    /*public Bank(int szamlakSzama) {
+        for (int i = 0; i < szamlakSzama; i++) {
+            this.szamlaLista=new ArrayList<>();
+        }
+    }*/
     public Szamla szamlanyitas(Tulajdonos tulajdonos, int hitelKeret){
         Szamla newSzamla;
         if(hitelKeret > 0){
