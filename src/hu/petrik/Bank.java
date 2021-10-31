@@ -6,12 +6,12 @@ import java.util.List;
 public class Bank {
     private List<Szamla> szamlaLista = new ArrayList<>();
 
-    //nem biztos hogy jó
-    /*public Bank(int szamlakSzama) {
+    public Bank(int szamlakSzama) {
+        //szamlakSzama=szamlaLista.size();
         for (int i = 0; i < szamlakSzama; i++) {
-            this.szamlaLista=new ArrayList<>();
+
         }
-    }*/
+    }
     public Szamla szamlanyitas(Tulajdonos tulajdonos, int hitelKeret){
         Szamla newSzamla;
         if(hitelKeret > 0){
@@ -45,10 +45,7 @@ public class Bank {
     public long getOsszhitelkeret(){
         long osszOsszeg=0;
         for (Szamla szamlak: szamlaLista) {
-            /*TODO:
-            ki kell válsztani a hiteleszamlákat valahogy...
-            maybe a kivesz metodus segitségével...
-             */
+            osszOsszeg += ((HitelSzamla) szamlak).getHitelKeret();
         }
         return osszOsszeg;
     }
