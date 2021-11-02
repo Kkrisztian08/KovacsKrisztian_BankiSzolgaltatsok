@@ -60,10 +60,6 @@ public class Main {
         b1.szamlaLista.get(4).Befizet(330000);
         b1.szamlaLista.get(5).Befizet(350000);
 
-        System.out.println("számla típusa:");
-        System.out.println(b1.szamlaLista.get(2).getClass());
-        System.out.println(b1.szamlaLista.get(4).getClass());
-
         System.out.println(t1.getNev()+" legnagyobb egyenlegő számlája: "+b1.getLegnagyobbEgyenleguSzamla(t1).getAktualisEgyenleg());
         System.out.println(t1.getNev() + " összes egyenlege: "+ b1.getOszzegyenleg(t1));
         System.out.println("Össz hitelkeret: " + b1.getOsszhitelkeret());
