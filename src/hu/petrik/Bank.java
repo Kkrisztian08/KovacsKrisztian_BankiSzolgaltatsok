@@ -4,14 +4,12 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class Bank {
-    private List<Szamla> szamlaLista = new ArrayList<>();
+    public List<Szamla> szamlaLista = new ArrayList<>();
 
-    public Bank(int szamlakSzama) {
-        //szamlakSzama=szamlaLista.size();
-        for (int i = 0; i < szamlakSzama; i++) {
+    public Bank() {
 
-        }
     }
+
     public Szamla szamlanyitas(Tulajdonos tulajdonos, int hitelKeret){
         Szamla newSzamla;
         if(hitelKeret > 0){
@@ -27,7 +25,9 @@ public class Bank {
     public int getOszzegyenleg(Tulajdonos tulajdonos){
         int ossz = 0;
         for (Szamla szamlak: szamlaLista ){
-            ossz+= szamlak.getAktualisEgyenleg();
+            if (szamlak.getTulajdonos().getNev().equals(tulajdonos.getNev())) {
+                ossz += szamlak.getAktualisEgyenleg();
+            }
         }
         return ossz;
     }
@@ -45,7 +45,9 @@ public class Bank {
     public long getOsszhitelkeret(){
         long osszOsszeg=0;
         for (Szamla szamlak: szamlaLista) {
-            osszOsszeg += ((HitelSzamla) szamlak).getHitelKeret();
+            if(szamlak.getClass().getTypeName().contains("HitelSzamla")){
+                osszOsszeg += ((HitelSzamla)szamlak).getHitelKeret();
+            }
         }
         return osszOsszeg;
     }

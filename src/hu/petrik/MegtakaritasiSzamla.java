@@ -2,10 +2,11 @@ package hu.petrik;
 
 public class MegtakaritasiSzamla extends Szamla {
     private double kamat;
-    public static double alapKamat;
+    public static double alapKamat=1.5;
 
     public MegtakaritasiSzamla(Tulajdonos tulajdonos) {
         super(tulajdonos);
+        this.kamat = alapKamat;
     }
 
     public double getKamat() {
@@ -16,9 +17,8 @@ public class MegtakaritasiSzamla extends Szamla {
         this.kamat = kamat;
     }
 
-    //valószinű nem jó
     public void Kamatjovairas(){
-        super.aktualisEgyenleg = (int) (super.aktualisEgyenleg * (100 + this.kamat) / 100);
+        super.aktualisEgyenleg= (int) (getAktualisEgyenleg()*kamat);
     }
 
     @Override

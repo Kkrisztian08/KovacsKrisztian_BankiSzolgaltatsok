@@ -1,7 +1,7 @@
 package hu.petrik;
 
 public class HitelSzamla extends Szamla{
-    private int hitelKeret;
+    private  int hitelKeret;
 
     public HitelSzamla(Tulajdonos tulajdonos, int hitelKeret) {
         super(tulajdonos);

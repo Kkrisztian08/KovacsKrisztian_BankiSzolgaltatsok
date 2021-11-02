@@ -1,7 +1,7 @@
 package hu.petrik;
 
 public abstract class BankiSzolgaltatas {
-    private Tulajdonos tulajdonos;
+    private final Tulajdonos tulajdonos;
 
     public Tulajdonos getTulajdonos() {
         return tulajdonos;
